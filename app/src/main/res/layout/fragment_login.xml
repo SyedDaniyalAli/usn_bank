@@ -81,6 +81,21 @@
         android:textColor="@android:color/white"
         android:text="@string/login"/>
 
+    <TextView
+        android:id="@+id/forgetPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/swipeRight"
+        android:layout_below="@+id/btn_login"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="134dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="127dp"
+        android:layout_marginBottom="167dp"
+        android:text="@string/forget_password"
+        android:textSize="15sp" />
+
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"

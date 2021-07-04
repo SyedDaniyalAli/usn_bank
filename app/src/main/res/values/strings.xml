@@ -11,4 +11,12 @@
     <string name="register">Register</string>
     <string name="re_type_password">Re-type Password</string>
     <string name="your_name">Full Name</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="send_code">Send Code</string>
+
+    <string-array name="service">
+        <item>DEPOSIT</item>
+        <item>WITHDRAW</item>
+        <item>TRANSFER</item>
+    </string-array>
 </resources>

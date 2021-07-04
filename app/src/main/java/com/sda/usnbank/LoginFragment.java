@@ -1,14 +1,19 @@
 package com.sda.usnbank;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.Objects;
 
 
 /**
@@ -18,6 +23,8 @@ public class LoginFragment extends Fragment {
 
     EditText et_email;
     TextInputLayout et_password;
+
+    Button btn_login;
 
 
     public LoginFragment() {
@@ -29,21 +36,24 @@ public class LoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        et_email = container.findViewById(R.id.et_email);
-        et_password = container.findViewById(R.id.et_password);
+        View viewInflater=inflater.inflate(R.layout.fragment_login, container, false);
 
-        et_email.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(et_email.getText().equals("admin") && et_password.equals("123"))
-                {
 
-                }
+        et_email = viewInflater.findViewById(R.id.et_email);
+        et_password = viewInflater.findViewById(R.id.et_password);
+        btn_login = viewInflater.findViewById(R.id.btn_login);
+
+        btn_login.setOnClickListener(v -> {
+            if(et_email.getText().toString().equals("admin") && et_password.getEditText().getText().toString().equals("123"))
+            {
+                startActivity(new Intent(getContext(), BankAppActivity.class));
+            }else {
+                Toast.makeText(getContext(), "Admin 123", Toast.LENGTH_SHORT).show();
             }
         });
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false);
+        return viewInflater;
     }
 
 }

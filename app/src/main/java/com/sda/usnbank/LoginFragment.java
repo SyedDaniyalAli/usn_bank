@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
@@ -25,6 +26,7 @@ public class LoginFragment extends Fragment {
     TextInputLayout et_password;
 
     Button btn_login;
+    TextView forgetPass;
 
 
     public LoginFragment() {
@@ -42,14 +44,19 @@ public class LoginFragment extends Fragment {
         et_email = viewInflater.findViewById(R.id.et_email);
         et_password = viewInflater.findViewById(R.id.et_password);
         btn_login = viewInflater.findViewById(R.id.btn_login);
+        forgetPass = viewInflater.findViewById(R.id.forgetPass);
 
         btn_login.setOnClickListener(v -> {
             if(et_email.getText().toString().equals("admin") && et_password.getEditText().getText().toString().equals("123"))
             {
                 startActivity(new Intent(getContext(), BankAppActivity.class));
             }else {
-                Toast.makeText(getContext(), "Admin 123", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "admin 123", Toast.LENGTH_SHORT).show();
             }
+        });
+
+        forgetPass.setOnClickListener(v -> {
+            startActivity(new Intent(getContext(), ForgetPass.class));
         });
 
         // Inflate the layout for this fragment
